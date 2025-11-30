@@ -8,7 +8,7 @@ import { useHistory, useLocation, useParams } from 'react-router';
 import FileNameModal from '@/components/server/files/FileNameModal';
 import Can from '@/components/elements/Can';
 import FlashMessageRender from '@/components/FlashMessageRender';
-import ContentBlock from '@/reviactyl/ui/ContentBlock';
+import PageContentBlock from '@/components/elements/PageContentBlock';
 import { ServerError } from '@/components/elements/ScreenBlock';
 import tw from 'twin.macro';
 import Button from '@/components/elements/Button';
@@ -20,7 +20,9 @@ import ErrorBoundary from '@/components/elements/ErrorBoundary';
 import { encodePathSegments, hashToPath } from '@/helpers';
 import { dirname } from 'path';
 import CodemirrorEditor from '@/components/elements/CodemirrorEditor';
-import Card from '@/reviactyl/ui/Card';
+
+import BeforeEdit from '@blueprint/components/Server/Files/Edit/BeforeEdit';
+import AfterEdit from '@blueprint/components/Server/Files/Edit/AfterEdit';
 
 export default () => {
     const [error, setError] = useState('');
@@ -85,30 +87,24 @@ export default () => {
     }
 
     return (
-        <ContentBlock title={'File Editor'}>
+        <PageContentBlock>
             <FlashMessageRender byKey={'files:view'} css={tw`mb-4`} />
             <ErrorBoundary>
-                <Card css={tw`!rounded-b-none !px-2 !py-6 mb-1 mt-2`}>
+                <div css={tw`mb-4`}>
                     <FileManagerBreadcrumbs withinFileEditor isNewFile={action !== 'edit'} />
-                </Card>
+                </div>
             </ErrorBoundary>
+            <BeforeEdit />
             {hash.replace(/^#/, '').endsWith('.pteroignore') && (
-                <Card className='!rounded-none mb-1'>
-                    <div css={tw`mb-4 p-4 rounded-ui border border-gray-600`}>
-                        <p css={tw`text-neutral-300 text-sm`}>
-                            You&apos;re editing a{' '}
-                            <code css={tw`font-mono bg-gray-900 rounded-ui border border-gray-600 py-px px-1`}>
-                                .pteroignore
-                            </code>{' '}
-                            file. Any files or directories listed in here will be excluded from backups. Wildcards are
-                            supported by using an asterisk (
-                            <code css={tw`font-mono bg-gray-900 rounded-ui border border-gray-600 py-px px-1`}>*</code>
-                            ). You can negate a prior rule by prepending an exclamation point (
-                            <code css={tw`font-mono bg-gray-900 rounded-ui border border-gray-600 py-px px-1`}>!</code>
-                            ).
-                        </p>
-                    </div>
-                </Card>
+                <div css={tw`mb-4 p-4 border-l-4 bg-neutral-900 rounded border-cyan-400`}>
+                    <p css={tw`text-neutral-300 text-sm`}>
+                        You&apos;re editing a <code css={tw`font-mono bg-black rounded py-px px-1`}>.pteroignore</code>{' '}
+                        file. Any files or directories listed in here will be excluded from backups. Wildcards are
+                        supported by using an asterisk (<code css={tw`font-mono bg-black rounded py-px px-1`}>*</code>).
+                        You can negate a prior rule by prepending an exclamation point (
+                        <code css={tw`font-mono bg-black rounded py-px px-1`}>!</code>).
+                    </p>
+                </div>
             )}
             <FileNameModal
                 visible={modalVisible}
@@ -118,7 +114,7 @@ export default () => {
                     save(name);
                 }}
             />
-            <Card css={tw`relative !p-1 !rounded-none mb-1`}>
+            <div css={tw`relative`}>
                 <SpinnerOverlay visible={loading} />
                 <CodemirrorEditor
                     mode={mode}
@@ -136,9 +132,9 @@ export default () => {
                         }
                     }}
                 />
-            </Card>
-            <Card css={tw`flex justify-end !rounded-t-none !px-2 !py-3`}>
-                <div css={tw`flex-1 sm:flex-none rounded-ui bg-gray-700 border border-gray-600 mr-4`}>
+            </div>
+            <div css={tw`flex justify-end mt-4`}>
+                <div css={tw`flex-1 sm:flex-none rounded bg-neutral-900 mr-4`}>
                     <Select value={mode} onChange={(e) => setMode(e.currentTarget.value)}>
                         {modes.map((mode) => (
                             <option key={`${mode.name}_${mode.mime}`} value={mode.mime}>
@@ -160,7 +156,8 @@ export default () => {
                         </Button>
                     </Can>
                 )}
-            </Card>
-        </ContentBlock>
+            </div>
+            <AfterEdit />
+        </PageContentBlock>
     );
 };

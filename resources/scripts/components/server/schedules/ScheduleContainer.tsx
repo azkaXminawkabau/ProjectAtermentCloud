@@ -13,12 +13,11 @@ import tw from 'twin.macro';
 import GreyRowBox from '@/components/elements/GreyRowBox';
 import { Button } from '@/components/elements/button/index';
 import ServerContentBlock from '@/components/elements/ServerContentBlock';
-import Card from '@/reviactyl/ui/Card';
-import { ClockIcon } from '@heroicons/react/solid';
-import { useTranslation } from 'react-i18next';
+
+import BeforeContent from '@blueprint/components/Server/Schedules/List/BeforeContent';
+import AfterContent from '@blueprint/components/Server/Schedules/List/AfterContent';
 
 export default () => {
-    const { t } = useTranslation('server/schedules');
     const match = useRouteMatch();
     const history = useHistory();
 
@@ -42,19 +41,17 @@ export default () => {
     }, []);
 
     return (
-        <ServerContentBlock title={t('title')}>
+        <ServerContentBlock title={'Schedules'}>
             <FlashMessageRender byKey={'schedules'} css={tw`mb-4`} />
             {!schedules.length && loading ? (
                 <Spinner size={'large'} centered />
             ) : (
                 <>
+                    <BeforeContent />
                     {schedules.length === 0 ? (
-                        <Card>
-                            <p css={tw`flex justify-center text-center text-sm text-gray-400`}>
-                                <ClockIcon className='w-5 h-5 mr-1' />
-                                {t('no-schedules')}
-                            </p>
-                        </Card>
+                        <p css={tw`text-sm text-center text-neutral-300`}>
+                            There are no schedules configured for this server.
+                        </p>
                     ) : (
                         schedules.map((schedule) => (
                             <GreyRowBox
@@ -72,13 +69,14 @@ export default () => {
                         ))
                     )}
                     <Can action={'schedule.create'}>
-                        <div css={tw`mt-2 flex justify-end`}>
+                        <div css={tw`mt-8 flex justify-end`}>
                             <EditScheduleModal visible={visible} onModalDismissed={() => setVisible(false)} />
                             <Button type={'button'} onClick={() => setVisible(true)}>
-                                {t('create-schedule')}
+                                Create schedule
                             </Button>
                         </div>
                     </Can>
+                    <AfterContent />
                 </>
             )}
         </ServerContentBlock>

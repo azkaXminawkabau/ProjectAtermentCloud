@@ -2,11 +2,13 @@ import { action, Action } from 'easy-peasy';
 
 export interface SiteSettings {
     name: string;
-    logo: string;
     locale: string;
     recaptcha: {
         enabled: boolean;
         siteKey: string;
+    };
+    blueprint: {
+        disable_attribution: boolean;
     };
 }
 

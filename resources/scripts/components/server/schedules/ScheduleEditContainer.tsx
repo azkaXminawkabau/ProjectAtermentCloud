@@ -18,12 +18,15 @@ import { format } from 'date-fns';
 import ScheduleCronRow from '@/components/server/schedules/ScheduleCronRow';
 import RunScheduleButton from '@/components/server/schedules/RunScheduleButton';
 
+import BeforeEdit from '@blueprint/components/Server/Schedules/Edit/BeforeEdit';
+import AfterEdit from '@blueprint/components/Server/Schedules/Edit/AfterEdit';
+
 interface Params {
     id: string;
 }
 
 const CronBox = ({ title, value }: { title: string; value: string }) => (
-    <div css={tw`bg-gray-700 rounded-ui p-3`}>
+    <div css={tw`bg-neutral-700 rounded p-3`}>
         <p css={tw`text-neutral-300 text-sm`}>{title}</p>
         <p css={tw`text-xl font-medium text-neutral-100`}>{value}</p>
     </div>
@@ -84,9 +87,12 @@ export default () => {
                 <Spinner size={'large'} centered />
             ) : (
                 <>
+                    <BeforeEdit />
                     <ScheduleCronRow cron={schedule.cron} css={tw`sm:hidden bg-neutral-700 rounded mb-4 p-3`} />
-                    <div css={tw`rounded-ui shadow bg-gray-700 border border-gray-600`}>
-                        <div css={tw`sm:flex items-center p-3 sm:p-6 border-b-4 border-neutral-600 rounded-t`}>
+                    <div css={tw`rounded shadow`}>
+                        <div
+                            css={tw`sm:flex items-center bg-neutral-900 p-3 sm:p-6 border-b-4 border-neutral-600 rounded-t`}
+                        >
                             <div css={tw`flex-1`}>
                                 <h3 css={tw`flex items-center text-neutral-100 text-2xl`}>
                                     {schedule.name}
@@ -164,6 +170,7 @@ export default () => {
                             </Can>
                         )}
                     </div>
+                    <AfterEdit />
                 </>
             )}
         </PageContentBlock>

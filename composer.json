@@ -96,6 +96,6 @@
             "php": "8.2.23"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

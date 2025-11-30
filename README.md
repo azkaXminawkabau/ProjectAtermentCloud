@@ -1,46 +1,81 @@
-<p align="center">
-<a href="https://reviactyl.dev/">
-<img width="1280" height="640" alt="Reviactyl Banner" src="https://github.com/user-attachments/assets/78e35fc7-4009-4678-b6dc-eec62ec7e7de" />
-</a>
+<!-- Header -->
+<br/><p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/BlueprintFramework/framework/assets/103201875/c0072c61-0135-4931-b5fa-ce4ee7d79f4a">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/BlueprintFramework/framework/assets/103201875/a652a6e7-b53f-4dcd-ae4e-2051f5c9c7b9">
+    <img alt="Blueprint" src="https://github.com/BlueprintFramework/framework/assets/103201875/c0072c61-0135-4931-b5fa-ce4ee7d79f4a" height="30">
+  </picture>
+  <br/>
+  Open-source modding framework for the Pterodactyl panel.
+  <br/><br/>
+  <a href="https://blueprint.zip">Website</a> <b>·</b>
+  <a href="https://discord.com/servers/blueprint-1063548024825057451">Community</a> <b>·</b>
+  <a href="https://blueprint.zip/docs">Documentation</a>
 </p>
 
-# Reviactyl Panel
 
-**Pterodactyl**, a free, open-source game server management panel built with PHP, React, and Go. Designed with security
-in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive
-UI to end users.
 
-Stop settling for less. Make game servers a first class citizen on your platform.
+<!-- Introduction -->
+<br/><h2 align="center">🧩 Introduction</h2>
 
-## Features
+**Blueprint** is an open-source extension framework/manager for Pterodactyl. Developers can create versatile, easy-to-install extensions that system administrators can install within minutes *(usually even seconds!)* without having to custom-code compatibility across multiple panel modifications.
 
-* ` 🌩️ ` **Customizable Options**: Reviactyl Offers various* options that lets you customize the panel to your liking.
-* ` 🎨 ` **Client-side Theme Selector**: Let your clients' choose between various styles according to their liking.
-* ` 🖥️ ` **Modern UI**: Reviactyl offers a modern and sleek UI that's more accessible than other modifications on market.
-* ` 🌍 ` **Multilingual**: Reviactyl is fully translatable and can be localized to your native language.
-* ` 🍀 ` **Open Source & Free**: The first and only free frontend modifications for pterodactyl with premium-like customizability.
+We aim to introduce new developers to Blueprint with easy to understand guides, documentation, developer commands, community support and more.
 
-## Sponsors
+[Learn more about **Blueprint**](https://blueprint.zip) or [find your **next extension**](https://blueprint.zip/browse).
 
-I would like to extend my sincere thanks to the following sponsors for helping fund Reviactyl's development.
-[Interested in becoming a sponsor?](https://github.com/sponsors/reviactyl)
 
-| Company                                                                           | About                                                                                                                                                                                                                                           |
-|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Tietokettu**](https://tietokettu.net/)                         | Tietokettu is a company that provides network and server services founded in 2019. Our goal is to create affordable and functional solutions for old ones.                                                                                                 |
 
-## License
+<!-- Showcase -->
+<br/><h2 align="center">📷 Showcase</h2>
 
-Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors. (Licensed under [MIT](https://github.com/reviactyl/panel/blob/develop/PTERO_LICENSE.md))
+![screenshots](https://github.com/BlueprintFramework/framework/assets/103201875/cb66943e-a60e-44e5-afd4-90475b106244)
 
-Reviactyl™, Copyright © 2025 Reviactyl and contributors. (Licensed under [MIT](https://github.com/reviactyl/panel/blob/develop/LICENSE.md))
 
-## Star History
 
-<a href="https://www.star-history.com/#reviactyl/panel&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=reviactyl/panel&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=reviactyl/panel&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=reviactyl/panel&type=Date" />
- </picture>
+<br/><h2 align="center">💖 Donate</h2>
+
+Blueprint is free and open-source software. We play a vital role in the Pterodactyl modding community and empower developers with tools to bring their ideas to life. To keep everything up and running, we rely heavily on [donations](https://hcb.hackclub.com/blueprint/donations). We're also nonprofit!
+
+[**Donate to our nonprofit organization**](https://hcb.hackclub.com/donations/start/blueprint) or [view our open finances](https://hcb.hackclub.com/blueprint).
+
+
+<!-- Contributors -->
+<br/><h2 align="center">👥 Contributors</h2>
+
+Contributors help shape the future of the Blueprint modding framework. To start contributing you have to [fork this repository](https://github.com/BlueprintFramework/framework/fork) and [open a pull request](https://github.com/BlueprintFramework/framework/compare).
+
+<a href="https://github.com/BlueprintFramework/framework/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=BlueprintFramework/framework" />
 </a>
+
+
+
+<!-- Stargazers -->
+<br/><h2 align="center">🌟 Stargazers</h2>
+
+<a href="https://github.com/BlueprintFramework/framework/stargazers/">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="http://reporoster.com/stars/BlueprintFramework/framework">
+    <img alt="stargazer-widget" src="http://reporoster.com/stars/dark/BlueprintFramework/framework">
+  </picture>
+</a>
+
+
+
+<!-- Related Links -->
+<br/><h2 align="center">🔗 Related Links</h2>
+
+[**Pterodactyl**](https://pterodactyl.io/) is a free, open-source game server management panel built with PHP, React, and Go.\
+[**BlueprintFramework/docker**](https://github.com/BlueprintFramework/docker) is the image for running Blueprint and Pterodactyl with Docker.\
+[**BlueprintFramework/templates**](https://github.com/BlueprintFramework/templates) is a repository with initialization templates for extension development.\
+[**BlueprintFramework/web**](https://github.com/BlueprintFramework/web) is our open-source documentation and landing website.
+
+
+<br/><br/>
+<p align="center">
+  © 2023-2025 Emma (prpl.wtf)
+  <br/><br/><img src="https://github.com/user-attachments/assets/e6ff62c3-6d99-4e43-850d-62150706e5dd"/>
+</p>
+
+

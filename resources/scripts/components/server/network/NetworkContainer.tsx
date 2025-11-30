@@ -12,10 +12,11 @@ import SpinnerOverlay from '@/components/elements/SpinnerOverlay';
 import getServerAllocations from '@/api/swr/getServerAllocations';
 import isEqual from 'react-fast-compare';
 import { useDeepCompareEffect } from '@/plugins/useDeepCompareEffect';
-import { useTranslation } from 'react-i18next';
+
+import BeforeContent from '@blueprint/components/Server/Network/BeforeContent';
+import AfterContent from '@blueprint/components/Server/Network/AfterContent';
 
 const NetworkContainer = () => {
-    const { t } = useTranslation('server/network');
     const [loading, setLoading] = useState(false);
     const uuid = ServerContext.useStoreState((state) => state.server.data!.uuid);
     const allocationLimit = ServerContext.useStoreState((state) => state.server.data!.featureLimits.allocations);
@@ -53,11 +54,12 @@ const NetworkContainer = () => {
     };
 
     return (
-        <ServerContentBlock showFlashKey={'server:network'} title={t('title')}>
+        <ServerContentBlock showFlashKey={'server:network'} title={'Network'}>
             {!data ? (
                 <Spinner size={'large'} centered />
             ) : (
                 <>
+                    <BeforeContent />
                     {data.map((allocation) => (
                         <AllocationRow key={`${allocation.ip}:${allocation.port}`} allocation={allocation} />
                     ))}
@@ -66,16 +68,18 @@ const NetworkContainer = () => {
                             <SpinnerOverlay visible={loading} />
                             <div css={tw`mt-6 sm:flex items-center justify-end`}>
                                 <p css={tw`text-sm text-neutral-300 mb-4 sm:mr-6 sm:mb-0`}>
-                                    {t('created', { count: data.length, limit: allocationLimit })}
+                                    You are currently using {data.length} of {allocationLimit} allowed allocations for
+                                    this server.
                                 </p>
                                 {allocationLimit > data.length && (
                                     <Button css={tw`w-full sm:w-auto`} color={'primary'} onClick={onCreateAllocation}>
-                                        {t('create')}
+                                        Create Allocation
                                     </Button>
                                 )}
                             </div>
                         </Can>
                     )}
+                    <AfterContent />
                 </>
             )}
         </ServerContentBlock>

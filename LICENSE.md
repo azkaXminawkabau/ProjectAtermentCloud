@@ -1,13 +1,9 @@
-<p align="center">
-<a href="https://reviactyl.dev/">
-<img height="313" alt="image" src="https://github.com/user-attachments/assets/6a8a5238-9d72-4c4e-bad3-f3fa95ade35a" />
-</a>
-</p>
+![License](https://github.com/user-attachments/assets/d73a6ff5-4d54-4d2e-bfc0-e0b3b1b13c50)
 
-# MIT License
+```
+MIT License
 
-```Reviactyl™
-Copyright (c) 2025 Reviactyl™ and contributors
+Copyright (c) 2023-2025 Emma (prpl.wtf)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,3 +22,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
